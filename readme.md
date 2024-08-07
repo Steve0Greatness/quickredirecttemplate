@@ -1,15 +1,16 @@
 # Quick Redirect Template
-This is a template for quickly making redirect domains that redirect to the exact page that a user requests.
 
-## Example
-Say we want to create a redirect domain from `exampleredirect.net` to `example.com`, but we want to make it so that when you go to `exampleredirect.net/u/user` it brings you to `example.com/u/user`. We would go around doing this by using the code in `index.js` host it, and then point our CNAME for `exampleredirect.net` to the IP Address that it is hosted at.
+This is a really small (and old) project that I don't think anyone does, will,
+or has used.
 
-## Usage
-The usage is pretty easy, you simply use `index.js` but you replace `https://example.com` with your website's hostname(do not include any forward-slash(`/`) at the end). The port is by default `8080` but if you're already hosting something on that port, then change it to a port you aren't using.
+If you don't know how to use this:
 
-## Requirements
-What you need to run this:
-1. Node.JS
+* Download the server file you need (denoserver.ts is for Deno, server.js is for
+  Node and Bun)
+* Change `example.com` to the domain you want to redirect to.
+* Deploy.
 
-This uses a built in library for Node: [`HTTP`](https://nodejs.org/api/http.html)  
-If you don't have Node.JS then there's nothing I can really do.
+## How this works
+
+It takes the path given with the request and appends it to the URL you want to
+redirect to. This could easily be written in anything.
